@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holded Web Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-display: 'Inter Display', 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --color-cta-blue: #1963EF;
+      --color-holded-blue-600: #4181F2;
+      --color-holded-blue-700: #306CD4;
+      --color-holded-blue-500: #6297FA;
+      --color-holded-blue-200: #D9E6FC;
+      --color-text-primary: #000000;
+      --color-text-secondary: #686A6C;
+      --color-bg-main: #FFFFFF;
+      --color-bg-soft: #F9FAFB;
+      --color-bg-muted: #F3F4F6;
+      --color-grey-50: #F9FAFB;
+      --color-grey-100: #F3F4F6;
+      --color-grey-200: #E5E7EB;
+      --color-grey-300: #D1D5DB;
+      --color-grey-400: #9CA3AF;
+      --color-grey-500: #6B7280;
+      --color-grey-600: #4B5563;
+      --color-grey-700: #374151;
+      --color-grey-800: #1F2937;
+      --color-grey-900: #111827;
+      --color-border: #D6D8DD;
+      --shadow-s2: 2px 2px 10px rgba(192, 192, 192, 0.45);
+      --shadow-base: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-primary);
+      background: var(--color-bg-main);
+      line-height: 1.5;
+    }
+
+    /* ─── Navigation ─── */
+    .ds-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-grey-200);
+      z-index: 100;
+      padding: 0 40px;
+    }
+    .ds-nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .ds-nav-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-grey-900);
+    }
+    .ds-nav-logo span { color: var(--color-cta-blue); }
+    .ds-nav-links { display: flex; gap: 24px; list-style: none; }
+    .ds-nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-grey-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .ds-nav-links a:hover { color: var(--color-cta-blue); }
+
+    /* ─── Layout ─── */
+    .ds-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .ds-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--color-grey-200);
+    }
+    .ds-section:last-child { border-bottom: none; }
+
+    .ds-section-title {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -1.5px;
+      margin-bottom: 8px;
+    }
+    .ds-section-subtitle {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+      margin-bottom: 48px;
+      line-height: 1.45;
+    }
+
+    .ds-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-grey-500);
+      margin-bottom: 16px;
+    }
+
+    .ds-subsection { margin-bottom: 56px; }
+    .ds-subsection:last-child { margin-bottom: 0; }
+
+    .ds-subsection-title {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-grey-100);
+    }
+
+    /* ─── Hero ─── */
+    .ds-hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      padding: 120px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ds-hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(65, 129, 242, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .ds-hero-title {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -2.5px;
+      line-height: 1;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .ds-hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    /* ─── Typography Specimens ─── */
+    .type-specimen {
+      display: flex;
+      align-items: baseline;
+      gap: 32px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--color-grey-100);
+    }
+    .type-specimen:last-child { border-bottom: none; }
+    .type-meta {
+      min-width: 200px;
+      flex-shrink: 0;
+    }
+    .type-token {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-cta-blue);
+      font-family: monospace;
+    }
+    .type-details {
+      font-size: 12px;
+      color: var(--color-grey-500);
+      margin-top: 4px;
+    }
+    .type-sample { flex: 1; }
+
+    /* ─── Color Grid ─── */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .color-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--color-grey-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .color-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-s2);
+    }
+    .color-swatch {
+      height: 80px;
+      position: relative;
+    }
+    .color-swatch-border {
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px 12px 0 0;
+      position: absolute;
+      inset: 0;
+    }
+    .color-info {
+      padding: 12px;
+    }
+    .color-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-grey-800);
+    }
+    .color-hex {
+      font-size: 12px;
+      font-family: monospace;
+      color: var(--color-grey-500);
+      margin-top: 2px;
+    }
+
+    /* ─── Shadow Cards ─── */
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .shadow-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+    }
+    .shadow-token {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-cta-blue);
+      font-family: monospace;
+      margin-bottom: 8px;
+    }
+    .shadow-value {
+      font-size: 12px;
+      color: var(--color-grey-500);
+      font-family: monospace;
+      word-break: break-all;
+    }
+
+    /* ─── Buttons ─── */
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--color-cta-blue);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      height: 48px;
+    }
+    .btn-primary:hover { background: var(--color-holded-blue-700); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text-primary);
+      padding: 14px 18px;
+      font-size: 16px;
+      height: 48px;
+      border-radius: 10px;
+    }
+    .btn-secondary:hover { color: var(--color-cta-blue); }
+    .btn-secondary svg { transition: transform 0.2s; }
+    .btn-secondary:hover svg { transform: translateX(3px); }
+
+    .btn-nav {
+      background: transparent;
+      color: var(--color-grey-700);
+      border: 1px solid var(--color-grey-300);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      height: 36px;
+    }
+    .btn-nav:hover { border-color: var(--color-grey-500); }
+
+    .btn-nav-primary {
+      background: var(--color-cta-blue);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      height: 36px;
+    }
+    .btn-nav-primary:hover { background: var(--color-holded-blue-700); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-cta-blue);
+      border: 1px solid var(--color-cta-blue);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    .btn-outline:hover { background: rgba(25, 99, 239, 0.05); }
+
+    /* ─── Component Cards ─── */
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .component-card {
+      background: var(--color-bg-soft);
+      border: 1px solid var(--color-grey-200);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .component-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .component-card-desc {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .component-preview {
+      background: #fff;
+      border: 1px solid var(--color-grey-200);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80px;
+    }
+
+    /* ─── Layout Demo ─── */
+    .layout-demo {
+      background: var(--color-bg-soft);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .layout-page {
+      background: #fff;
+      border: 1px solid var(--color-grey-200);
+      border-radius: 8px;
+      max-width: 720px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .layout-bar {
+      height: 6px;
+      background: var(--color-grey-900);
+    }
+    .layout-navbar {
+      height: 8px;
+      background: #fff;
+      border-bottom: 1px solid var(--color-grey-200);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+    }
+    .layout-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--color-grey-400);
+    }
+    .layout-container {
+      margin: 16px auto;
+      padding: 0 40px;
+    }
+    .layout-ruler {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+    .layout-measure {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--color-cta-blue);
+      font-weight: 600;
+    }
+    .layout-line {
+      flex: 1;
+      height: 1px;
+      background: var(--color-cta-blue);
+      opacity: 0.3;
+      margin: 0 8px;
+    }
+
+    /* ─── Token Table ─── */
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .token-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-grey-500);
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--color-grey-200);
+    }
+    .token-table td {
+      padding: 12px 16px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--color-grey-100);
+      vertical-align: middle;
+    }
+    .token-table code {
+      font-size: 13px;
+      background: var(--color-bg-muted);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--color-cta-blue);
+    }
+
+    /* ─── Page Pattern ─── */
+    .page-pattern {
+      display: flex;
+      gap: 40px;
+    }
+    .page-pattern-col {
+      flex: 1;
+    }
+    .page-pattern-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .page-block-list {
+      list-style: none;
+      counter-reset: block;
+    }
+    .page-block-list li {
+      counter-increment: block;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-grey-100);
+      font-size: 14px;
+      color: var(--color-grey-700);
+    }
+    .page-block-list li::before {
+      content: counter(block);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--color-bg-muted);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-grey-500);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="ds-nav">
+    <div class="ds-nav-inner">
+      <div class="ds-nav-logo"><span>Holded</span> Design System</div>
+      <ul class="ds-nav-links">
+        <li><a href="#typography">Tipografía</a></li>
+        <li><a href="#colors">Colores</a></li>
+        <li><a href="#shadows">Sombras</a></li>
+        <li><a href="#buttons">Botones</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#patterns">Patrones</a></li>
+        <li><a href="#tokens">Tokens</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="ds-hero">
+    <h1 class="ds-hero-title">Holded Design System</h1>
+    <p class="ds-hero-sub">Sistema de diseño web extraído de Brand Elements Web en Figma. Referencia visual para desarrollo front-end.</p>
+  </header>
+
+  <div class="ds-container">
+
+    <!-- ═══ TYPOGRAPHY ═══ -->
+    <section id="typography" class="ds-section">
+      <p class="ds-label">01</p>
+      <h2 class="ds-section-title">Tipografía</h2>
+      <p class="ds-section-subtitle">Dos familias tipográficas: Inter Display para headings grandes e Inter para el resto del contenido.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Headings</h3>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">H2</div>
+            <div class="type-details">Inter Display &middot; SemiBold 600<br>64px / 100% / -2.5px</div>
+          </div>
+          <div class="type-sample" style="font-family: 'Inter Display', sans-serif; font-size: 52px; font-weight: 600; line-height: 1; letter-spacing: -2.5px;">
+            Facturación y mucho más
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">H3</div>
+            <div class="type-details">Inter Display &middot; SemiBold 600<br>52px / 100% / -2px</div>
+          </div>
+          <div class="type-sample" style="font-family: 'Inter Display', sans-serif; font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -2px;">
+            Reemplaza procesos manuales
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">H4</div>
+            <div class="type-details">Inter Display &middot; SemiBold 600<br>48px / 110% / -1.5px</div>
+          </div>
+          <div class="type-sample" style="font-family: 'Inter Display', sans-serif; font-size: 40px; font-weight: 600; line-height: 1.1; letter-spacing: -1.5px;">
+            Holded se ocupa de las facturas
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">H5</div>
+            <div class="type-details">Inter &middot; Medium 500<br>24px / 130% / -1.5px</div>
+          </div>
+          <div class="type-sample" style="font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; line-height: 1.3; letter-spacing: -1.5px;">
+            Facturación electrónica fácil y segura
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">H6</div>
+            <div class="type-details">Inter &middot; Medium 500<br>20px / 130% / -1px</div>
+          </div>
+          <div class="type-sample" style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -1px;">
+            Funcionalidades que marcan la diferencia
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">H7</div>
+            <div class="type-details">Inter &middot; Medium 500<br>16px / 120% / -1px</div>
+          </div>
+          <div class="type-sample" style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.2; letter-spacing: -1px;">
+            Plantillas personalizables
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">H8</div>
+            <div class="type-details">Inter &middot; SemiBold 600<br>14px / 120% / -1px</div>
+          </div>
+          <div class="type-sample" style="font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; line-height: 1.2; letter-spacing: -1px;">
+            Recordatorios automáticos de pago
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Body</h3>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">B2</div>
+            <div class="type-details">Inter &middot; Regular 400<br>18px / 145% / 0</div>
+          </div>
+          <div class="type-sample" style="font-size: 18px; font-weight: 400; line-height: 1.45;">
+            Gestiona toda tu empresa en un solo lugar. Facturación, contabilidad, CRM, proyectos, inventario y RRHH.
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">B3</div>
+            <div class="type-details">Inter &middot; Regular 400<br>16px / 145% / 0</div>
+          </div>
+          <div class="type-sample" style="font-size: 16px; font-weight: 400; line-height: 1.45;">
+            Cumple con la normativa sin complicaciones. Declara tus facturas de cualquier lugar y genera tus reportes con un clic.
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-meta">
+            <div class="type-token">B4</div>
+            <div class="type-details">Inter &middot; Regular 400<br>14px / 150% / 0</div>
+          </div>
+          <div class="type-sample" style="font-size: 14px; font-weight: 400; line-height: 1.5;">
+            Tu contabilidad en un solo almacén. Asientos automáticos en el libro diario. Cálculo de impuestos. Conciliación bancaria.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ COLORS ═══ -->
+    <section id="colors" class="ds-section">
+      <p class="ds-label">02</p>
+      <h2 class="ds-section-title">Colores</h2>
+      <p class="ds-section-subtitle">Paleta completa de colores incluyendo primarios, grises, semánticos y colores de marca.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Primarios & Marca</h3>
+        <div class="color-grid">
+          <div class="color-card">
+            <div class="color-swatch" style="background: #1963EF;"></div>
+            <div class="color-info"><div class="color-name">CTA Blue</div><div class="color-hex">#1963EF</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #4181F2;"></div>
+            <div class="color-info"><div class="color-name">Holded Blue 600</div><div class="color-hex">#4181F2</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #306CD4;"></div>
+            <div class="color-info"><div class="color-name">Holded Blue 700</div><div class="color-hex">#306CD4</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #6297FA;"></div>
+            <div class="color-info"><div class="color-name">Holded Blue 500</div><div class="color-hex">#6297FA</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #D9E6FC;"></div>
+            <div class="color-info"><div class="color-name">Holded Blue 200</div><div class="color-hex">#D9E6FC</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #1F2937;"></div>
+            <div class="color-info"><div class="color-name">Soft Black</div><div class="color-hex">#1F2937</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Texto</h3>
+        <div class="color-grid">
+          <div class="color-card">
+            <div class="color-swatch" style="background: #000000;"></div>
+            <div class="color-info"><div class="color-name">Text Primary</div><div class="color-hex">#000000</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #686A6C;"></div>
+            <div class="color-info"><div class="color-name">Text Secondary</div><div class="color-hex">#686A6C</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #D6D8DD;"></div>
+            <div class="color-info"><div class="color-name">Border</div><div class="color-hex">#D6D8DD</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Escala de Grises (Holded Grey)</h3>
+        <div class="color-grid">
+          <div class="color-card">
+            <div class="color-swatch" style="background: #F9FAFB;"><div class="color-swatch-border"></div></div>
+            <div class="color-info"><div class="color-name">Grey 50</div><div class="color-hex">#F9FAFB</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #F3F4F6;"><div class="color-swatch-border"></div></div>
+            <div class="color-info"><div class="color-name">Grey 100</div><div class="color-hex">#F3F4F6</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #E5E7EB;"></div>
+            <div class="color-info"><div class="color-name">Grey 200</div><div class="color-hex">#E5E7EB</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #D1D5DB;"></div>
+            <div class="color-info"><div class="color-name">Grey 300</div><div class="color-hex">#D1D5DB</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #9CA3AF;"></div>
+            <div class="color-info"><div class="color-name">Grey 400</div><div class="color-hex">#9CA3AF</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #6B7280;"></div>
+            <div class="color-info"><div class="color-name">Grey 500</div><div class="color-hex">#6B7280</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #4B5563;"></div>
+            <div class="color-info"><div class="color-name">Grey 600</div><div class="color-hex">#4B5563</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #374151;"></div>
+            <div class="color-info"><div class="color-name">Grey 700</div><div class="color-hex">#374151</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #1F2937;"></div>
+            <div class="color-info"><div class="color-name">Grey 800</div><div class="color-hex">#1F2937</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #111827;"></div>
+            <div class="color-info"><div class="color-name">Grey 900</div><div class="color-hex">#111827</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Semánticos</h3>
+        <div class="color-grid">
+          <!-- Green -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #ECFDF5;"><div class="color-swatch-border"></div></div>
+            <div class="color-info"><div class="color-name">Green 50</div><div class="color-hex">#ECFDF5</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #10B981;"></div>
+            <div class="color-info"><div class="color-name">Green 500</div><div class="color-hex">#10B981</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #059669;"></div>
+            <div class="color-info"><div class="color-name">Green 600</div><div class="color-hex">#059669</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #064E3B;"></div>
+            <div class="color-info"><div class="color-name">Green 900</div><div class="color-hex">#064E3B</div></div>
+          </div>
+          <!-- Yellow -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #FFFBEB;"><div class="color-swatch-border"></div></div>
+            <div class="color-info"><div class="color-name">Yellow 50</div><div class="color-hex">#FFFBEB</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #D97706;"></div>
+            <div class="color-info"><div class="color-name">Yellow 600</div><div class="color-hex">#D97706</div></div>
+          </div>
+          <!-- Red -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #FFF7F7;"><div class="color-swatch-border"></div></div>
+            <div class="color-info"><div class="color-name">Red 50</div><div class="color-hex">#FFF7F7</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #FF7676;"></div>
+            <div class="color-info"><div class="color-name">Red 500</div><div class="color-hex">#FF7676</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #DF4949;"></div>
+            <div class="color-info"><div class="color-name">Red 600</div><div class="color-hex">#DF4949</div></div>
+          </div>
+          <!-- Orange -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #FB923C;"></div>
+            <div class="color-info"><div class="color-name">Orange 400</div><div class="color-hex">#FB923C</div></div>
+          </div>
+          <!-- Purple -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #8B5CF6;"></div>
+            <div class="color-info"><div class="color-name">Purple 500</div><div class="color-hex">#8B5CF6</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #7973E6;"></div>
+            <div class="color-info"><div class="color-name">Slate Blue</div><div class="color-hex">#7973E6</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Aprende (sub-marca)</h3>
+        <div class="color-grid">
+          <div class="color-card">
+            <div class="color-swatch" style="background: #1FA071;"></div>
+            <div class="color-info"><div class="color-name">Aprende Green</div><div class="color-hex">#1FA071</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #D59900;"></div>
+            <div class="color-info"><div class="color-name">Aprende Yellow</div><div class="color-hex">#D59900</div></div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #FDBE8A;"></div>
+            <div class="color-info"><div class="color-name">Aprende Orange</div><div class="color-hex">#FDBE8A</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SHADOWS ═══ -->
+    <section id="shadows" class="ds-section">
+      <p class="ds-label">03</p>
+      <h2 class="ds-section-title">Sombras</h2>
+      <p class="ds-section-subtitle">Dos niveles de elevación para crear jerarquía visual en tarjetas y componentes flotantes.</p>
+
+      <div class="shadow-grid">
+        <div class="shadow-card" style="box-shadow: var(--shadow-base);">
+          <div class="shadow-token">shadow/base</div>
+          <p style="font-size: 14px; color: var(--color-grey-600); margin-bottom: 12px;">Elevación sutil para tarjetas y contenedores</p>
+          <div class="shadow-value">0 1px 2px rgba(0,0,0,0.06),<br>0 1px 3px rgba(0,0,0,0.1)</div>
+        </div>
+        <div class="shadow-card" style="box-shadow: var(--shadow-s2);">
+          <div class="shadow-token">s2</div>
+          <p style="font-size: 14px; color: var(--color-grey-600); margin-bottom: 12px;">Elevación media para hovers y popovers</p>
+          <div class="shadow-value">2px 2px 10px rgba(192,192,192,0.45)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BUTTONS ═══ -->
+    <section id="buttons" class="ds-section">
+      <p class="ds-label">04</p>
+      <h2 class="ds-section-title">Botones</h2>
+      <p class="ds-section-subtitle">Sistema de botones con variantes para CTAs, navegación y acciones contextuales.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Hero & CTA (48px)</h3>
+        <div class="button-grid">
+          <button class="btn btn-primary">Prueba gratis</button>
+          <button class="btn btn-secondary">Aprende más <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Navbar (36px)</h3>
+        <div class="button-grid">
+          <button class="btn btn-nav">Acceder</button>
+          <button class="btn btn-nav-primary">Prueba gratis</button>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Outline & Secundarios</h3>
+        <div class="button-grid">
+          <button class="btn btn-outline">Contacta con Ventas</button>
+          <button class="btn btn-outline" style="border-color: var(--color-grey-300); color: var(--color-grey-700);">Ver todas las funcionalidades</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ LAYOUT ═══ -->
+    <section id="layout" class="ds-section">
+      <p class="ds-label">05</p>
+      <h2 class="ds-section-title">Layout</h2>
+      <p class="ds-section-subtitle">Contenedor de 1280px centrado en viewport de 1440px con márgenes de 80px.</p>
+
+      <div class="layout-demo">
+        <div class="layout-ruler">
+          <span class="layout-measure">80px</span>
+          <div class="layout-line"></div>
+          <span class="layout-measure">1280px container</span>
+          <div class="layout-line"></div>
+          <span class="layout-measure">80px</span>
+        </div>
+        <div style="display: flex; gap: 0; margin-top: 8px;">
+          <div style="width: 80px; background: rgba(25,99,239,0.06); height: 120px; border-radius: 8px 0 0 8px; border: 1px dashed rgba(25,99,239,0.2);"></div>
+          <div style="flex: 1; background: #fff; height: 120px; border: 1px solid var(--color-grey-200); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 13px; font-weight: 500; color: var(--color-grey-500);">Contenido &mdash; max-width: 1280px</span>
+          </div>
+          <div style="width: 80px; background: rgba(25,99,239,0.06); height: 120px; border-radius: 0 8px 8px 0; border: 1px dashed rgba(25,99,239,0.2);"></div>
+        </div>
+        <div style="text-align: center; margin-top: 16px;">
+          <span class="layout-measure">Viewport: 1440px</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px;">
+        <table class="token-table">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Valor</th>
+              <th>Uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>container-large</code></td>
+              <td>1280px</td>
+              <td>Ancho máximo del contenido</td>
+            </tr>
+            <tr>
+              <td><code>padding-section-large</code></td>
+              <td>112px</td>
+              <td>Padding vertical entre secciones</td>
+            </tr>
+            <tr>
+              <td><code>side-margin</code></td>
+              <td>80px</td>
+              <td>Márgenes laterales (1440 - 1280) / 2</td>
+            </tr>
+            <tr>
+              <td><code>border-width</code></td>
+              <td>1px</td>
+              <td>Ancho estándar de bordes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═══ COMPONENTS ═══ -->
+    <section id="components" class="ds-section">
+      <p class="ds-label">06</p>
+      <h2 class="ds-section-title">Componentes</h2>
+      <p class="ds-section-subtitle">Bloques reutilizables identificados en las páginas de Home y Facturación.</p>
+
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-title">Banner</div>
+          <div class="component-card-desc">Barra superior de 48px con fondo oscuro. Mensaje promocional + teléfono de ventas.</div>
+          <div class="component-preview" style="background: var(--color-grey-900); color: #fff; font-size: 12px; gap: 40px;">
+            <span style="opacity: 0.8;">Empieza ahora y ahorra 50%</span>
+            <span style="opacity: 0.6;">+34 930 34 01 71</span>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-card-title">Navbar</div>
+          <div class="component-card-desc">Barra de navegación de 60px: logo + menú + botones CTA (Acceder / Prueba gratis).</div>
+          <div class="component-preview" style="justify-content: space-between; font-size: 13px;">
+            <span style="font-weight: 600; color: var(--color-grey-900);">Holded</span>
+            <span style="color: var(--color-grey-500); font-size: 11px;">Funcionalidades &nbsp; Empresas &nbsp; Precios</span>
+            <button class="btn btn-nav-primary" style="font-size: 11px; height: 28px; padding: 4px 12px;">Prueba gratis</button>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-card-title">Hero Centrado</div>
+          <div class="component-card-desc">Título H2 centrado + subtítulo + dos botones CTA sobre fondo con gradiente/radiance.</div>
+          <div class="component-preview" style="flex-direction: column; gap: 8px; background: linear-gradient(135deg, #0a0a0a, #1a1a2e); color: #fff; border-radius: 12px;">
+            <span style="font-family: 'Inter Display', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: -0.5px;">Facturación y mucho más</span>
+            <span style="font-size: 10px; opacity: 0.6;">Gestiona tu empresa en un solo lugar</span>
+            <button class="btn btn-primary" style="font-size: 10px; height: 24px; padding: 4px 12px; border-radius: 6px;">Prueba gratis</button>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-card-title">Hero Split</div>
+          <div class="component-card-desc">Dos columnas: texto con badge + título + CTA a la izquierda, screenshot del producto a la derecha.</div>
+          <div class="component-preview" style="gap: 16px;">
+            <div style="flex: 1;">
+              <div style="font-size: 8px; color: var(--color-cta-blue); margin-bottom: 4px;">Facturación</div>
+              <div style="font-weight: 600; font-size: 12px; letter-spacing: -0.5px;">Facturación en la nube</div>
+              <div style="font-size: 8px; color: var(--color-grey-500); margin-top: 2px;">Fácil y rápida.</div>
+            </div>
+            <div style="width: 80px; height: 60px; background: var(--color-bg-muted); border-radius: 6px; border: 1px solid var(--color-grey-200);"></div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-card-title">Feature Card</div>
+          <div class="component-card-desc">Tarjeta con icono, título H7, descripción B4 y enlace de acción.</div>
+          <div class="component-preview" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+            <div style="width: 32px; height: 32px; background: var(--color-holded-blue-200); border-radius: 8px;"></div>
+            <span style="font-weight: 500; font-size: 13px;">Plantillas personalizables</span>
+            <span style="font-size: 11px; color: var(--color-grey-500);">Elige la plantilla que mejor se adapte a tu negocio.</span>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-card-title">Testimonial</div>
+          <div class="component-card-desc">Cita destacada con avatar, texto y nombre/cargo del cliente.</div>
+          <div class="component-preview" style="flex-direction: column; gap: 8px;">
+            <div style="width: 32px; height: 32px; background: var(--color-grey-300); border-radius: 50%;"></div>
+            <span style="font-size: 11px; font-style: italic; text-align: center; color: var(--color-grey-700);">"Toda la empresa habla el mismo idioma gracias a Holded"</span>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-card-title">Stats Section</div>
+          <div class="component-card-desc">Métricas destacadas con números grandes (H2/H3) y labels descriptivos.</div>
+          <div class="component-preview" style="gap: 24px;">
+            <div style="text-align: center;">
+              <div style="font-family: 'Inter Display', sans-serif; font-weight: 600; font-size: 24px; color: var(--color-cta-blue);">40%</div>
+              <div style="font-size: 9px; color: var(--color-grey-500);">Ahorro</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Inter Display', sans-serif; font-weight: 600; font-size: 24px;">160</div>
+              <div style="font-size: 9px; color: var(--color-grey-500);">Módulos</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Inter Display', sans-serif; font-weight: 600; font-size: 24px; color: var(--color-cta-blue);">80%</div>
+              <div style="font-size: 9px; color: var(--color-grey-500);">Satisfacción</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-card-title">CTA Final</div>
+          <div class="component-card-desc">Sección de cierre con fondo oscuro/gradiente, título y botón CTA primario.</div>
+          <div class="component-preview" style="background: linear-gradient(135deg, #111827, #1F2937); color: #fff; border-radius: 12px; flex-direction: column; gap: 8px;">
+            <span style="font-weight: 600; font-size: 13px;">Prueba Holded gratis durante 14 días</span>
+            <button class="btn btn-primary" style="font-size: 10px; height: 24px; padding: 4px 12px; border-radius: 6px;">Prueba gratis</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PATTERNS ═══ -->
+    <section id="patterns" class="ds-section">
+      <p class="ds-label">07</p>
+      <h2 class="ds-section-title">Patrones de Página</h2>
+      <p class="ds-section-subtitle">Estructura de bloques identificada en las páginas de Home y Facturación.</p>
+
+      <div class="page-pattern">
+        <div class="page-pattern-col">
+          <div class="page-pattern-title">Home</div>
+          <ol class="page-block-list">
+            <li>Banner (promo)</li>
+            <li>Navbar</li>
+            <li>Hero centrado con gradiente</li>
+            <li>List of Features</li>
+            <li>Feature con imagen de producto</li>
+            <li>Hero secundario</li>
+            <li>Features grid</li>
+            <li>All-in-one features</li>
+            <li>Testimonial / Quote</li>
+            <li>Stats section</li>
+            <li>Social proof</li>
+            <li>CTA final</li>
+          </ol>
+        </div>
+        <div class="page-pattern-col">
+          <div class="page-pattern-title">Facturación</div>
+          <ol class="page-block-list">
+            <li>Banner (promo)</li>
+            <li>Navbar</li>
+            <li>Hero split (texto + producto)</li>
+            <li>Feature highlight con imagen</li>
+            <li>List of Features</li>
+            <li>Feature cards grid</li>
+            <li>Testimonial / Quote</li>
+            <li>All-in-one features</li>
+            <li>Features checklist</li>
+            <li>CTA final</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TOKENS ═══ -->
+    <section id="tokens" class="ds-section">
+      <p class="ds-label">08</p>
+      <h2 class="ds-section-title">CSS Custom Properties</h2>
+      <p class="ds-section-subtitle">Variables CSS listas para copiar e implementar en tu proyecto.</p>
+
+      <div style="background: var(--color-grey-900); border-radius: 12px; padding: 32px; overflow-x: auto;">
+        <pre style="color: #e2e8f0; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.7; margin: 0;"><span style="color: #7dd3fc;">:root</span> {
+  <span style="color: #94a3b8;">/* Tipografía */</span>
+  <span style="color: #a78bfa;">--font-display</span>: <span style="color: #fbbf24;">'Inter Display'</span>, sans-serif;
+  <span style="color: #a78bfa;">--font-body</span>: <span style="color: #fbbf24;">'Inter'</span>, sans-serif;
+
+  <span style="color: #94a3b8;">/* Colores primarios */</span>
+  <span style="color: #a78bfa;">--color-cta-blue</span>: <span style="color: #7dd3fc;">#1963EF</span>;
+  <span style="color: #a78bfa;">--color-holded-blue-600</span>: <span style="color: #7dd3fc;">#4181F2</span>;
+  <span style="color: #a78bfa;">--color-holded-blue-700</span>: <span style="color: #7dd3fc;">#306CD4</span>;
+  <span style="color: #a78bfa;">--color-holded-blue-500</span>: <span style="color: #7dd3fc;">#6297FA</span>;
+  <span style="color: #a78bfa;">--color-holded-blue-200</span>: <span style="color: #7dd3fc;">#D9E6FC</span>;
+
+  <span style="color: #94a3b8;">/* Texto */</span>
+  <span style="color: #a78bfa;">--color-text-primary</span>: <span style="color: #7dd3fc;">#000000</span>;
+  <span style="color: #a78bfa;">--color-text-secondary</span>: <span style="color: #7dd3fc;">#686A6C</span>;
+
+  <span style="color: #94a3b8;">/* Fondos */</span>
+  <span style="color: #a78bfa;">--color-bg-main</span>: <span style="color: #7dd3fc;">#FFFFFF</span>;
+  <span style="color: #a78bfa;">--color-bg-soft</span>: <span style="color: #7dd3fc;">#F9FAFB</span>;
+  <span style="color: #a78bfa;">--color-bg-muted</span>: <span style="color: #7dd3fc;">#F3F4F6</span>;
+
+  <span style="color: #94a3b8;">/* Grises */</span>
+  <span style="color: #a78bfa;">--color-grey-50</span>: <span style="color: #7dd3fc;">#F9FAFB</span>;
+  <span style="color: #a78bfa;">--color-grey-100</span>: <span style="color: #7dd3fc;">#F3F4F6</span>;
+  <span style="color: #a78bfa;">--color-grey-200</span>: <span style="color: #7dd3fc;">#E5E7EB</span>;
+  <span style="color: #a78bfa;">--color-grey-300</span>: <span style="color: #7dd3fc;">#D1D5DB</span>;
+  <span style="color: #a78bfa;">--color-grey-400</span>: <span style="color: #7dd3fc;">#9CA3AF</span>;
+  <span style="color: #a78bfa;">--color-grey-500</span>: <span style="color: #7dd3fc;">#6B7280</span>;
+  <span style="color: #a78bfa;">--color-grey-600</span>: <span style="color: #7dd3fc;">#4B5563</span>;
+  <span style="color: #a78bfa;">--color-grey-700</span>: <span style="color: #7dd3fc;">#374151</span>;
+  <span style="color: #a78bfa;">--color-grey-800</span>: <span style="color: #7dd3fc;">#1F2937</span>;
+  <span style="color: #a78bfa;">--color-grey-900</span>: <span style="color: #7dd3fc;">#111827</span>;
+
+  <span style="color: #94a3b8;">/* Bordes */</span>
+  <span style="color: #a78bfa;">--color-border</span>: <span style="color: #7dd3fc;">#D6D8DD</span>;
+  <span style="color: #a78bfa;">--border-width</span>: <span style="color: #7dd3fc;">1px</span>;
+
+  <span style="color: #94a3b8;">/* Semánticos */</span>
+  <span style="color: #a78bfa;">--color-success-500</span>: <span style="color: #7dd3fc;">#10B981</span>;
+  <span style="color: #a78bfa;">--color-success-600</span>: <span style="color: #7dd3fc;">#059669</span>;
+  <span style="color: #a78bfa;">--color-warning-600</span>: <span style="color: #7dd3fc;">#D97706</span>;
+  <span style="color: #a78bfa;">--color-error-500</span>: <span style="color: #7dd3fc;">#FF7676</span>;
+  <span style="color: #a78bfa;">--color-error-600</span>: <span style="color: #7dd3fc;">#DF4949</span>;
+
+  <span style="color: #94a3b8;">/* Sombras */</span>
+  <span style="color: #a78bfa;">--shadow-s2</span>: <span style="color: #fbbf24;">2px 2px 10px rgba(192,192,192,0.45)</span>;
+  <span style="color: #a78bfa;">--shadow-base</span>: <span style="color: #fbbf24;">0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1)</span>;
+
+  <span style="color: #94a3b8;">/* Layout */</span>
+  <span style="color: #a78bfa;">--container-large</span>: <span style="color: #7dd3fc;">1280px</span>;
+  <span style="color: #a78bfa;">--page-width</span>: <span style="color: #7dd3fc;">1440px</span>;
+  <span style="color: #a78bfa;">--section-padding-large</span>: <span style="color: #7dd3fc;">112px</span>;
+  <span style="color: #a78bfa;">--side-margin</span>: <span style="color: #7dd3fc;">80px</span>;
+}</pre>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer style="background: var(--color-bg-soft); border-top: 1px solid var(--color-grey-200); padding: 32px 40px; text-align: center;">
+    <p style="font-size: 13px; color: var(--color-grey-500);">
+      Holded Web Design System &mdash; Extraído de <a href="https://www.figma.com/design/CMPC0m0ydq1jzHiVPdFcvY/Brand-Elements-Web" style="color: var(--color-cta-blue); text-decoration: none;">Brand Elements Web</a> en Figma
+    </p>
+  </footer>
+
+</body>
+</html>
